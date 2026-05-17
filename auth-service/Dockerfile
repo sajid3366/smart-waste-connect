@@ -6,13 +6,18 @@ WORKDIR /app
 
 # Copy package.json and install dependencies
 COPY package*.json ./
-RUN npm ci --only=production
+
+# Install only production dependencies
+RUN npm ci --omit=dev
 
 # Install curl for healthchecks
 RUN apk add --no-cache curl
 
 # Copy app source code
 COPY . .
+
+# Environment
+ENV NODE_ENV=production
 
 # Expose port
 EXPOSE 5001

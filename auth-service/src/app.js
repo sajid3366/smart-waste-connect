@@ -8,13 +8,14 @@ import logger from "./lib/logger.js";
 
 dotenv.config();
 const app = express();
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: process.env.CLIENT_URL?.split(",") || ["http://localhost:3000"],
     credentials: true,
   })
 );
@@ -49,7 +50,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal Server Error" });
 });
 
-const PORT = process.env.PORT;
+
 app.listen(PORT, () => {
   logger.info(`✅ Auth service running on port ${PORT}`);
   // console.log(`✅ Auth service running on port ${PORT}`);

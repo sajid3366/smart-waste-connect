@@ -7,11 +7,10 @@ services:
     container_name: auth-service
     ports:
       - "5001:5001"
-    environment:
-      - NODE_ENV=production
-      - PORT=5001
+    env_file:
+      - ./auth-service/.env
     volumes:
-      - ./auth-service/logs:/usr/src/app/logs # logs for Filebeat
+      - ./auth-service/logs:/app/logs # logs for Filebeat
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://127.0.0.1:5001/auth/health || exit 1"]
       interval: 30s
@@ -19,122 +18,27 @@ services:
       retries: 5
       start_period: 40s
     restart: unless-stopped
-    networks:
-      - app-network
-
-  # -------------------------
-  # Waste Service
-  # -------------------------
+  
   waste-service:
     build: ./waste-service
     container_name: waste-service
     ports:
-      - "5002:5002"
-    environment:
-      - NODE_ENV=production
-      - PORT=5002
+    - "5002:5002"
+    env_file:
+      - ./waste-service/.env
     volumes:
-      - ./waste-service/logs:/usr/src/app/logs # logs for Filebeat
+      - ./waste-service/logs:/app/logs # logs for Filebeat
     healthcheck:
-      test:
-        ["CMD-SHELL", "curl -f http://127.0.0.1:5002/waste/health || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://127.0.0.1:5002/waste/health || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 5
       start_period: 40s
     restart: unless-stopped
-    networks:
-      - app-network
 
-  # -------------------------
-  # HAProxy Gateway
-  # -------------------------
-  swc-haproxy:
-    image: haproxy:3.2
-    container_name: swc-haproxy
-    ports:
-      - "8080:80"
-    volumes:
-      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    depends_on:
-      auth-service:
-        condition: service_healthy
-      waste-service:
-        condition: service_healthy
-    restart: unless-stopped
-    networks:
-      - app-network
-
-  # -------------------------
-  # Elasticsearch
-  # -------------------------
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.13
-    container_name: elasticsearch
-    environment:
-      - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
-    ports:
-      - "9200:9200"
-    volumes:
-      - es_data:/usr/share/elasticsearch/data
-    networks:
-      - app-network
-
-  # -------------------------
-  # Logstash
-  # -------------------------
-  logstash:
-    image: docker.elastic.co/logstash/logstash:7.17.13
-    container_name: logstash
-    ports:
-      - "5044:5044"
-    volumes:
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
-    depends_on:
-      - elasticsearch
-    networks:
-      - app-network
-
-  # -------------------------
-  # Kibana
-  # -------------------------
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.17.13
-    container_name: kibana
-    ports:
-      - "5601:5601"
-    environment:
-      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-    depends_on:
-      - elasticsearch
-    networks:
-      - app-network
-
-  # -------------------------
-  # Filebeat
-  # -------------------------
-  filebeat:
-    image: docker.elastic.co/beats/filebeat:7.17.13
-    container_name: filebeat
-    user: root
-    command: filebeat -e -c /usr/share/filebeat/filebeat.yml
-    volumes:
-      - ./auth-service/logs:/usr/src/app/logs/auth:ro
-      - ./waste-service/logs:/usr/src/app/logs/waste:ro
-      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
-    depends_on:
-      - logstash
-    restart: unless-stopped
-    networks:
-      - app-network
-
-# -------------------------
-# Volumes & Networks
-# -------------------------
-volumes:
-  es_data:
 
 networks:
   app-network:
     driver: bridge
+
+ 
