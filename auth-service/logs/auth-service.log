@@ -1,0 +1,43 @@
+{"level":"info","message":"✅ Auth service running on port 8001","timestamp":"2025-10-19T14:42:08.141Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","timestamp":"2025-10-19T14:48:57.670Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","timestamp":"2025-10-19T14:53:06.481Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","timestamp":"2025-10-26T16:11:25.266Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","timestamp":"2025-10-26T16:16:22.960Z"}
+{"correlationId":"903851e3-da15-4343-899a-714770a2615d","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","timestamp":"2025-10-26T16:17:41.510Z"}
+{"correlationId":"de034e70-ff4a-4eac-9776-d8814e1ee5bc","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","timestamp":"2025-10-26T16:40:33.830Z"}
+{"correlationId":"7412c626-5ba3-4bea-a5b8-39350bcd1fdb","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","timestamp":"2025-10-26T16:40:48.215Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-10-26T17:00:09.490Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-10-26T20:56:35.413Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-11-23T13:50:24.158Z"}
+{"correlationId":"dd27bdba-4a15-4699-a1d9-8d786f6a5540","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2025-11-23T13:51:07.989Z"}
+{"correlationId":"3deaf85d-4864-4d18-af57-c12972f13906","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T13:54:08.484Z"}
+{"correlationId":"54651021-3188-42ce-9daf-6beb2ac2c994","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T13:56:55.325Z"}
+{"correlationId":"4b763f3c-6c61-416c-94dd-8b81a12d672a","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:00:29.682Z"}
+{"correlationId":"f91ad422-f83b-4956-9e31-421fd39a06a3","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:01:40.939Z"}
+{"correlationId":"3068428b-65f0-49eb-8929-3cfe4f105bb8","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:02:57.374Z"}
+{"correlationId":"9ae956bb-c7fc-4f39-ba87-7c733b3cf17d","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:04:14.519Z"}
+{"correlationId":"b00d377d-6e41-4972-969c-955073fd120a","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:07:04.282Z"}
+{"correlationId":"a46d8e3a-a877-4579-a68c-91d20de58fa4","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:08:07.831Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-11-23T14:09:28.689Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-11-23T14:09:47.101Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-11-23T14:11:17.372Z"}
+{"correlationId":"c2617258-4d53-48a7-8133-d9dffa499b21","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:11:55.749Z"}
+{"correlationId":"f334abc7-e2a5-4328-90e3-e513bacfac46","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:12:37.316Z"}
+{"correlationId":"95e12cbb-befa-4898-a130-ba4d617c2aab","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:13:18.766Z"}
+{"correlationId":"bea9d3c9-021d-4b25-90bc-700a9b7af2f4","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:13:30.025Z"}
+{"correlationId":"2f8d98c9-4883-4580-a308-23b695768551","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:14:33.919Z"}
+{"correlationId":"8ce08d56-cd41-49a6-ade1-a51e2585d6db","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:20:10.408Z"}
+{"correlationId":"0a2af2d0-f441-4cf0-b735-07f7bdccad9d","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:29:41.579Z"}
+{"correlationId":"d904e418-a9a3-4bb8-a823-d70dfa64ed65","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:30:28.781Z"}
+{"correlationId":"02ff0c7b-6215-489b-bc1c-baf2702b636b","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:30:42.788Z"}
+{"correlationId":"e3c7d652-6b0c-4af9-ad32-eee2a2de533a","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:31:08.909Z"}
+{"correlationId":"0a0ec731-c9d5-4e2b-b956-a5d1f2e86cc3","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:33:21.621Z"}
+{"correlationId":"57491c43-f417-470f-8940-45cc2e9d86dc","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:33:34.768Z"}
+{"correlationId":"6803f4d6-7f17-4a5f-bd8c-d7311d1026e9","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:33:48.240Z"}
+{"correlationId":"f76b96f6-0180-4326-9ba4-0ff8423b2775","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:34:20.087Z"}
+{"correlationId":"73d2788c-1649-431a-b14c-9607e31d4114","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:34:28.691Z"}
+{"correlationId":"9aca7108-a97d-4e61-b2c6-f49389edf20f","level":"info","message":"Incoming request","method":"POST","path":"/auth/signup","service":"auth-service","timestamp":"2025-11-23T14:34:55.449Z"}
+{"correlationId":"d5001ffc-0863-4696-8c6b-de1b3e9605ab","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:35:03.825Z"}
+{"correlationId":"decb51f9-f8c1-4186-bc10-804e744d6910","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:35:46.123Z"}
+{"correlationId":"574a8a2f-2fab-4853-8d96-e947d64e1db7","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:55:28.974Z"}
+{"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-11-23T17:40:05.940Z"}

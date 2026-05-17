@@ -5,9 +5,10 @@ const userSchema = new mongoose.Schema(
     full_name: { type: String, required: true },
     address: { type: String, required: true },
     email: { type: String, required: true, unique: true },
+    image:{type:String},
     role: {
       type: String,
-      enum: ['driver', 'household', 'service provider', 'buyer', 'admin'],
+      enum: ['driver', 'household', 'serviceprovider', 'buyer', 'admin'],
       required: true
     },
     phone: { type: String, required: true, unique: true },
@@ -16,4 +17,4 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-export default mongoose.model('User', userSchema)
+export default mongoose.model('User', userSchema) 
