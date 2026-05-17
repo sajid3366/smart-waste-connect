@@ -41,3 +41,76 @@
 {"correlationId":"decb51f9-f8c1-4186-bc10-804e744d6910","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:35:46.123Z"}
 {"correlationId":"574a8a2f-2fab-4853-8d96-e947d64e1db7","level":"info","message":"Incoming request","method":"POST","path":"/auth/login","service":"auth-service","timestamp":"2025-11-23T14:55:28.974Z"}
 {"level":"info","message":"✅ Auth service running on port 8001","service":"auth-service","timestamp":"2025-11-23T17:40:05.940Z"}
+{"level":"info","message":"✅ Auth service running on port 5001","service":"auth-service","timestamp":"2026-05-17T18:51:45.026Z"}
+{"correlationId":"9b4b91ed-6399-408c-b073-3bc173e61612","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:51:49.568Z"}
+{"correlationId":"a9f06851-9842-4062-85de-ddb1ec456c56","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:52:19.573Z"}
+{"correlationId":"9ff776ad-5425-4424-807a-8f1dbd6c3ded","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:52:49.675Z"}
+{"correlationId":"58dd8d51-540c-4c3f-8274-bf9a150e91a2","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:53:19.695Z"}
+{"correlationId":"7f3cde77-e99c-4890-aea0-3bc8f6624d39","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:53:49.711Z"}
+{"correlationId":"f457dba4-b1a6-4f24-8d0e-7efd8de0fe15","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:54:19.717Z"}
+{"correlationId":"d379c53b-fc8a-4573-9483-c7628944e7b8","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:54:49.730Z"}
+{"correlationId":"bf3f5e4f-b7d1-4b97-8ec4-e5b867a3236d","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:55:19.738Z"}
+{"correlationId":"8be2d04a-5459-4218-b700-ea8bd5bade50","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:55:49.748Z"}
+{"level":"info","message":"✅ Auth service running on port 5001","service":"auth-service","timestamp":"2026-05-17T18:56:15.831Z"}
+{"correlationId":"c140d4a1-87f7-44f5-8e8e-83f84de5679c","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:56:20.328Z"}
+{"correlationId":"53205f77-d7c7-42f0-8bf0-505329340b53","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:56:50.344Z"}
+{"correlationId":"1026eadb-5f73-4724-afbf-66dd683a3b48","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:57:20.479Z"}
+{"correlationId":"f9c6f5b2-1eef-4009-9a74-51c83ff596f6","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:57:50.478Z"}
+{"correlationId":"f72e0072-aa70-4baa-90df-2e82b25f1470","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:58:20.494Z"}
+{"correlationId":"11c7675d-6d46-4f83-bf1b-e25ce6ff893d","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:58:50.540Z"}
+{"level":"info","message":"✅ Auth service running on port 5001","service":"auth-service","timestamp":"2026-05-17T18:59:32.052Z"}
+{"correlationId":"e964194b-967a-4edc-8896-4fa046cc4d03","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T18:59:36.562Z"}
+{"correlationId":"b6854a08-0252-4bf6-885e-afb4000891e7","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:00:06.583Z"}
+{"level":"info","message":"✅ Auth service running on port 5001","service":"auth-service","timestamp":"2026-05-17T19:03:57.997Z"}
+{"correlationId":"141542ce-c082-4a4e-99a2-6f9219cb5e9c","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:04:02.234Z"}
+{"correlationId":"581aa8b0-ca15-4fb5-a0be-b411fceaf362","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:04:32.296Z"}
+{"correlationId":"4f9ce78e-40f7-4516-a22e-b8528b830cd7","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:05:02.314Z"}
+{"correlationId":"6c656618-7982-4cdf-91d2-a0320a55ace6","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:05:32.335Z"}
+{"correlationId":"f2949f4c-fb37-441f-a897-9a6788cd881a","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:06:02.357Z"}
+{"correlationId":"df7f9c83-9168-41a8-bfda-96ade5215207","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:06:32.399Z"}
+{"correlationId":"85f53d85-c097-4bf0-be56-d1428cb6d7a1","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:07:02.418Z"}
+{"correlationId":"926a0697-0cd2-451e-97d6-5b28be58118b","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:07:32.433Z"}
+{"correlationId":"016df78e-3a13-4c83-951b-355634ce56dc","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:08:02.450Z"}
+{"correlationId":"50857e7d-5d8e-425c-9791-abeb5ee798ff","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:08:32.472Z"}
+{"correlationId":"7359be8b-a5be-43da-b399-6b6805e03c5a","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:09:02.498Z"}
+{"correlationId":"e9871363-6260-467e-b410-fd55074e3312","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:09:32.511Z"}
+{"level":"info","message":"✅ Auth service running on port 5001","service":"auth-service","timestamp":"2026-05-17T19:10:43.283Z"}
+{"correlationId":"f3222403-9f30-4125-8845-b0cbe29615c1","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:10:47.831Z"}
+{"correlationId":"e5eebeb7-a4bf-46ab-a6c9-929cafbc8daa","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:11:17.851Z"}
+{"correlationId":"9e52249e-1b41-4b01-b0d4-1a66cd13cbd4","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:11:47.989Z"}
+{"correlationId":"b04cd582-0e16-48db-87aa-0b9dc338057b","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:12:18.006Z"}
+{"correlationId":"465a8722-5052-4df8-95d9-0b5598ed7db1","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:12:48.028Z"}
+{"correlationId":"2db528fe-3445-4eb7-8234-f8b9d828b696","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:13:18.047Z"}
+{"correlationId":"a3a3b449-3e2a-4339-9edc-749941b45a2b","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:13:48.068Z"}
+{"correlationId":"a14f93f1-1222-4d13-8e80-d6ab04042d77","level":"info","message":"Incoming request","method":"GET","path":"/health","service":"auth-service","timestamp":"2026-05-17T19:14:01.762Z"}
+{"correlationId":"ca49bf64-e376-41e4-81bc-5dd3cb56a012","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:14:18.086Z"}
+{"correlationId":"9eea50f5-3e7f-403c-badd-266aa4516552","level":"info","message":"Incoming request","method":"GET","path":"/health","service":"auth-service","timestamp":"2026-05-17T19:14:45.897Z"}
+{"correlationId":"f56e4546-2638-49b5-a54c-ac7517bd9286","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:14:48.127Z"}
+{"correlationId":"0a7f7f90-a720-4852-bb34-084e1116c98b","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:15:18.151Z"}
+{"correlationId":"73e08ba9-f8ab-46d5-9b9f-4a3e58474ec9","level":"info","message":"Incoming request","method":"GET","path":"/health","service":"auth-service","timestamp":"2026-05-17T19:15:23.194Z"}
+{"correlationId":"bc5591f4-1808-45d8-9a74-38731f7f6f1b","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:15:48.174Z"}
+{"correlationId":"ffcaf10e-2e61-41ed-83da-2950f8e42524","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:16:18.196Z"}
+{"correlationId":"ba7722ce-49bf-4c31-9d14-0ed91693c234","level":"info","message":"Incoming request","method":"GET","path":"/health","service":"auth-service","timestamp":"2026-05-17T19:16:36.258Z"}
+{"correlationId":"1eb73c66-edc9-4bac-92d4-1942b0100872","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:16:48.220Z"}
+{"correlationId":"3a2c03a0-47f2-4430-9aaf-bff7a990114f","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:17:18.242Z"}
+{"correlationId":"3aee51d7-c9df-492d-b8b9-ba8ce0698c4d","level":"info","message":"Incoming request","method":"GET","path":"/health","service":"auth-service","timestamp":"2026-05-17T19:17:32.104Z"}
+{"correlationId":"e9c254f7-d50d-4382-8f72-4a01e400a6d8","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:17:48.265Z"}
+{"correlationId":"adc9047c-2b3b-4123-8865-d358d695dbc9","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:18:18.287Z"}
+{"correlationId":"6bec06db-7e02-445e-822a-2c6ac4158cbd","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:18:48.311Z"}
+{"correlationId":"783070ab-b8a3-466f-a53b-90f281fbc53e","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:19:18.337Z"}
+{"level":"info","message":"✅ Auth service running on port 5001","service":"auth-service","timestamp":"2026-05-17T19:19:55.604Z"}
+{"correlationId":"7ce89aec-bc56-407a-aebe-6a5bda6d70b0","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:20:00.144Z"}
+{"correlationId":"973d8955-10a5-484a-b4d5-56deef7b2b85","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:20:19.232Z"}
+{"correlationId":"6e699765-5d64-4ae0-84bf-e35e3b461d5e","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:20:30.164Z"}
+{"correlationId":"511fda00-23ef-4908-97a3-d693a9ffa749","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:20:44.871Z"}
+{"correlationId":"0ab70628-cf0d-422b-beca-c9fe0b45ffcd","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:21:00.208Z"}
+{"correlationId":"947bc82e-114e-4b76-93a5-b51d33d549a3","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:21:30.226Z"}
+{"correlationId":"37f921bb-d6cc-4433-afd5-90639e30a3c7","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:22:00.243Z"}
+{"correlationId":"b0e54d2d-4325-4751-b13d-ff10914f9dea","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:22:30.266Z"}
+{"correlationId":"2fbaf0d8-01ae-48cd-b65b-b337516a16a0","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:23:00.280Z"}
+{"correlationId":"59e024d7-e2c9-47da-b5bd-036463b9ded6","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:23:30.294Z"}
+{"correlationId":"00015faa-1d80-465d-b389-724285055849","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:24:00.308Z"}
+{"correlationId":"66a09f98-5749-4394-93ca-2eb1955fbf03","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:24:30.343Z"}
+{"correlationId":"f66b255d-2123-4045-898b-ad080bbd9600","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:25:00.358Z"}
+{"correlationId":"0476287b-a0a5-42ca-80cb-eeeebc43a0d3","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:25:30.372Z"}
+{"correlationId":"b9657456-12bc-40a8-afbd-1eee7bd96cec","level":"info","message":"Incoming request","method":"GET","path":"/auth/health","service":"auth-service","timestamp":"2026-05-17T19:26:00.386Z"}
