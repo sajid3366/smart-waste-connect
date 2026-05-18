@@ -3,14 +3,14 @@ services:
   # Auth Service
   # -------------------------
   auth-service:
-    build: ./auth-service
+    build: ./smart-waste-connect-backend/auth-service
     container_name: auth-service
     ports:
       - "5001:5001"
     env_file:
-      - ./auth-service/.env
+      - ./smart-waste-connect-backend/auth-service/.env
     volumes:
-      - ./auth-service/logs:/app/logs # logs for Filebeat
+      - ./smart-waste-connect-backend/auth-service/logs:/app/logs # logs for Filebeat
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://127.0.0.1:5001/auth/health || exit 1"]
       interval: 30s
@@ -22,14 +22,14 @@ services:
       - app-network
   
   waste-service:
-    build: ./waste-service
+    build: ./smart-waste-connect-backend/waste-service
     container_name: waste-service
     ports:
     - "5002:5002"
     env_file:
-      - ./waste-service/.env
+      - ./smart-waste-connect-backend/waste-service/.env
     volumes:
-      - ./waste-service/logs:/app/logs # logs for Filebeat
+      - ./smart-waste-connect-backend/waste-service/logs:/app/logs # logs for Filebeat
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://127.0.0.1:5002/waste/health || exit 1"]
       interval: 30s
@@ -52,6 +52,22 @@ services:
         condition: service_healthy
     networks:
       - app-network
+
+  frontend:
+    build: ./smart-waste-connect-frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./smart-waste-connect-frontend/.env.local
+    depends_on:
+      gateway:
+        condition: service_started
+    restart: unless-stopped
+    networks:
+      - app-network
+
+
 
 networks:
   app-network:
