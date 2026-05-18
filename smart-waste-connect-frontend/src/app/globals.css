@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+
+:root {
+  
+}
+
+@theme {
+ --color-primaryGreen: #93c648 ;
+ --color-secondaryGreen: #50b577;
+ --color-footerBg: #E9F5E3;
+ --color-primaryText: #222222;
+ --color-secondaryText: #555555;
+
+ --color-sidenav: #30613A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
