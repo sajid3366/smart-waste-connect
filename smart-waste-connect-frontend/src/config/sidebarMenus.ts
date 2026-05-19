@@ -1,5 +1,5 @@
 // config/sidebarMenus.ts
-import { LayoutDashboard, Truck, DollarSign, History, ShoppingCart, CreditCard, Users, Settings } from "lucide-react"
+import { LayoutDashboard, Truck,  ShoppingCart,  Users,  } from "lucide-react"
 
 export type UserRole = "admin"
 

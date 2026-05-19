@@ -9,7 +9,6 @@ import { FiEye, FiEyeOff } from 'react-icons/fi'
 import loginBg from '../../../public/images/sign-bg.png'
 import Image from 'next/image'
 import { IoArrowBackOutline } from 'react-icons/io5'
-import useAxios from '@/hooks/useAxios'
 import { useRouter } from 'next/navigation'
 import authService from '@/services/authService'
 
@@ -25,7 +24,6 @@ type FormValues = {
 export default function Signup () {
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const axios = useAxios()
   const router = useRouter()
   const {
     register,
@@ -53,9 +51,14 @@ export default function Signup () {
         toast.success('Signup successful!')
         router.push('/login')
       }
-    } catch (error: any) {
-      console.log(error?.response?.data)
-      toast.error(error?.response?.data.error)
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        const axiosError = error as Error & {
+          response?: { data?: { error?: string } }
+        }
+        console.log(axiosError?.response?.data)
+        toast.error(axiosError?.response?.data?.error ?? 'Something went wrong')
+      }
     } finally {
       setIsLoading(false)
     }

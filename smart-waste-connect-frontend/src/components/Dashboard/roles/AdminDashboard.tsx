@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { Recycle, Users, Truck, ShoppingBag, TrendingUp, MapPin, AlertCircle } from 'lucide-react'
-import useAxios from '@/hooks/useAxios'
+import axiosInstance from '@/hooks/useAxios'
 
 interface AdminStats {
   totalWaste: { type: string; amount: string }[]
@@ -11,14 +11,13 @@ interface AdminStats {
 }
 
 export default function AdminDashboard() {
-  const axios = useAxios()
   const [stats, setStats] = useState<AdminStats | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get('/admin/dashboard-stats')
+        const res = await axiosInstance.get('/admin/dashboard-stats')
         setStats(res.data)
       } catch (err) {
         console.error(err)
@@ -27,7 +26,7 @@ export default function AdminDashboard() {
       }
     }
     fetchStats()
-  }, [])
+  }, [axiosInstance])
 
   if (loading) return <DashboardSkeleton />
 

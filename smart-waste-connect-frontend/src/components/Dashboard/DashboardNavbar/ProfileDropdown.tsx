@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { User, Settings, LogOut, ChevronDown } from 'lucide-react'
-import Cookies from 'js-cookie'
+import { User, Settings, LogOut } from 'lucide-react'
 import { removeToken } from '@/utils/tokenStorage'
 import authService from '@/services/authService'
 import toast from 'react-hot-toast'
@@ -43,7 +42,7 @@ export default function ProfileDropdown ({ user }: ProfileDropdownProps) {
 
     try {
       const logoutRes = await authService.logout()
-      console.log(logoutRes, 'logoutres')
+      //   console.log(logoutRes, 'logoutres')
       if (logoutRes.status === 200) {
         toast.success('Successfully Logged out')
         removeToken()
@@ -51,6 +50,7 @@ export default function ProfileDropdown ({ user }: ProfileDropdownProps) {
         router.push('/login')
       }
     } catch (error) {
+      console.log(error)
       toast.error('Failed to log out')
     }
   }

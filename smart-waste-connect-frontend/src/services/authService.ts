@@ -1,26 +1,33 @@
-import useAxios from "@/hooks/useAxios";
-import { get } from "http";
+import axiosInstance from '@/hooks/useAxios'
 
-const Axios = useAxios();
+interface SignupProps {
+    phone: string;
+    password: string;
+    full_name: string;
+    email: string;
+    address: string;
+    role: string;
+
+}
 interface LoginParams {
     phone: string;
     password: string;
 }
 
 const authService ={
-    signup: async (payload: any) =>{
-        return await Axios.post(`/auth/signup`, payload)
+    signup: async (payload: SignupProps) =>{
+        return await axiosInstance.post(`/auth/signup`, payload)
     },
     login: async (payload: LoginParams) => {
-        return await Axios.post(`/auth/login`, payload)
+        return await axiosInstance.post(`/auth/login`, payload)
     },
 
     logout: async () => {
-        return await Axios.post(`/auth/logout`)
+        return await axiosInstance.post(`/auth/logout`)
     },
 
     getCurrentUserProfile: async () => {
-        return await Axios.get(`/auth/profile`)
+        return await axiosInstance.get(`/auth/profile`)
     }
 
 }

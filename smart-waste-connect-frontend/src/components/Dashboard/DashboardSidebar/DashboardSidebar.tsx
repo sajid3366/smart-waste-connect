@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LogOut } from 'lucide-react'
 import wasteLogo from '../../../../public/images/smart-waste-small-logo.png'
 import { sidebarMenus, UserRole } from '@/config/sidebarMenus'
 

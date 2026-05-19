@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(req: NextRequest) {
-    const { pathname } = req.nextUrl
+    // const { pathname } = req.nextUrl
 
     // Get accessToken from httpOnly cookie
     const accessToken = req.cookies.get('accessToken')?.value

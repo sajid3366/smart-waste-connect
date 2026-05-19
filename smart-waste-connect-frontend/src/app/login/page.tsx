@@ -9,11 +9,10 @@ import { useForm } from 'react-hook-form'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
 import loginBg from '../../../public/images/sign-bg.png'
 import { IoArrowBackOutline } from 'react-icons/io5'
-import useAxios from '@/hooks/useAxios'
+// import useAxios from '@/hooks/useAxios'
 import { useRouter } from 'next/navigation'
 import { setToken } from '@/utils/tokenStorage'
 import authService from '@/services/authService'
-import Cookies from 'js-cookie'
 
 type FormValues = {
   phone: string
@@ -23,7 +22,7 @@ type FormValues = {
 export default function Login () {
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const axios = useAxios()
+  // const axios = useAxios()
   const router = useRouter()
   const [checked, setChecked] = useState(true)
 
@@ -53,7 +52,7 @@ export default function Login () {
           refreshToken: loginRes.data.tokens.refreshToken,
           role: loginRes.data.user.role
         })
-        
+
         // if (loginRes?.data?.user?.role === 'admin') {
         //   router.push('/admin-dashboard')
         // } else if (loginRes?.data?.user?.role === 'household') {
@@ -70,8 +69,14 @@ export default function Login () {
         toast.success('Successfully Logged in')
         router.push('/dashboard')
       }
-    } catch (error: any) {
-      toast.error(error?.response?.data?.error || 'Something went wrong!')
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        const axiosError = error as Error & {
+          response?: { data?: { error?: string } }
+        }
+        console.log(axiosError?.response?.data)
+        toast.error(axiosError?.response?.data?.error ?? 'Something went wrong')
+      }
     } finally {
       setIsLoading(false)
     }
