@@ -12,7 +12,7 @@ export default function RootLayoutClient({
   const pathName = usePathname();
 
   // Routes where navbar and footer should NOT appear
-  const hideNavFooterRoutes = ["/login", "/signup", "/household-dashboard", "/buyer-dashboard", "/driver-dashboard","/serviceprovider-dashboard", "/admin-dashboard"];
+  const hideNavFooterRoutes = ["/login", "/signup", "/dashboard"];
 
   // Check if current path starts with any of the hidden prefixes
   const hideNavFooter = hideNavFooterRoutes.some((route) =>

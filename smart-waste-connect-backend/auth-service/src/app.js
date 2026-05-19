@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import correlationIdMiddleware from "./middleware/correlation.js";
 import logger from "./lib/logger.js";
 
@@ -38,6 +39,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/auth", authRoutes);
+app.use("/auth", userRoutes);
 
 // Error logging
 app.use((err, req, res, next) => {

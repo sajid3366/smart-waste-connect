@@ -12,17 +12,20 @@ import { IoArrowBackOutline } from 'react-icons/io5'
 import useAxios from '@/hooks/useAxios'
 import { useRouter } from 'next/navigation'
 import { setToken } from '@/utils/tokenStorage'
+import authService from '@/services/authService'
+import Cookies from 'js-cookie'
 
 type FormValues = {
   phone: string
   password: string
 }
 
-export default function Login() {
+export default function Login () {
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const axios = useAxios()
   const router = useRouter()
+  const [checked, setChecked] = useState(true)
 
   const {
     register,
@@ -41,33 +44,31 @@ export default function Login() {
     // console.log(userData, 'user data')
 
     try {
-      const loginRes = await axios.post('/auth/login', userData, {
-        withCredentials: true
-      })
+      const loginRes = await authService.login(userData)
       console.log(loginRes, 'login response')
 
       if (loginRes.status === 200) {
         setToken({
-          accessToken: loginRes.data.accessToken.accessToken,
-          refreshToken: loginRes.data.accessToken.refreshToken
+          accessToken: loginRes.data.tokens.accessToken,
+          refreshToken: loginRes.data.tokens.refreshToken,
+          role: loginRes.data.user.role
         })
-        if (loginRes?.data?.user?.role === 'admin') {
-          router.push('/admin-dashboard')
-        }
-        else if (loginRes?.data?.user?.role === 'household') {
-          router.push('/household-dashboard')
-        }
-        else if (loginRes?.data?.user?.role === 'serviceprovider') {
-          router.push('/serviceprovider-dashboard')
-        }
-        else if (loginRes?.data?.user?.role === 'buyer') {
-          router.push('/buyer-dashboard')
-        }
-        else if (loginRes?.data?.user?.role === 'driver') {
-          router.push('/driver-dashboard')
-        }
+        
+        // if (loginRes?.data?.user?.role === 'admin') {
+        //   router.push('/admin-dashboard')
+        // } else if (loginRes?.data?.user?.role === 'household') {
+        //   router.push('/household-dashboard')
+        // } else if (loginRes?.data?.user?.role === 'serviceprovider') {
+        //   router.push('/serviceprovider-dashboard')
+        // } else if (loginRes?.data?.user?.role === 'buyer') {
+        //   router.push('/buyer-dashboard')
+        // } else if (loginRes?.data?.user?.role === 'driver') {
+        //   router.push('/driver-dashboard')
+        // }
+
+        // Cookies.set('role', loginRes.data.user.role, { expires: 7 })
         toast.success('Successfully Logged in')
-        // router.push('/dashboard')
+        router.push('/dashboard')
       }
     } catch (error: any) {
       toast.error(error?.response?.data?.error || 'Something went wrong!')
@@ -156,14 +157,16 @@ export default function Login() {
           )}
 
           <div className='flex justify-between items-center mt-8'>
-            <div className='flex gap-x-2'>
+            <div className='flex gap-x-2 items-center'>
               <input
-                className='cursor-pointer accent-[#7FC155] w-[15px]'
+                className='cursor-pointer accent-[#7FC155] w-[17px]'
                 type='checkbox'
                 name='rememberme'
-                disabled={isLoading}
+                checked={checked}
+                onChange={e => setChecked(e.target.checked)}
               />
-              <p className='text-[14px] text-[#7FC155] md:text-base font-medium'>
+
+              <p className='text-[14px] md:text-base font-medium text-[#7FC155]'>
                 Remember Me
               </p>
             </div>

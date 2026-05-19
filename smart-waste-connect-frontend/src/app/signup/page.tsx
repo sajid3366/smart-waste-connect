@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { IoArrowBackOutline } from 'react-icons/io5'
 import useAxios from '@/hooks/useAxios'
 import { useRouter } from 'next/navigation'
+import authService from '@/services/authService'
 
 type FormValues = {
   full_name: string
@@ -46,7 +47,7 @@ export default function Signup () {
     // console.log(userData, 'user data')
 
     try {
-      const signupRes = await axios.post('/auth/signup', userData)
+      const signupRes = await authService.signup(userData)
 
       if (signupRes.status === 200) {
         toast.success('Signup successful!')
@@ -61,14 +62,14 @@ export default function Signup () {
   }
 
   return (
-    <div className='bg-[#386641] grid grid-cols-9'>
+    <div className='bg-[#386641] grid grid-cols-9 h-screen'>
       <div className='col-span-5 relative hidden md:block mx-auto'>
         <Image
-          className='h-full w-[80%]'
+          className='h-screen w-full object-cover'
           src={loginBg}
           alt='sign in background'
         />
-        <div className='absolute top-20 right-[99px]'>
+        <div className='absolute top-20 right-0'>
           <Link href={'/'}>
             <span className='bg-white py-3 px-6 text-sm font-medium'>
               <IoArrowBackOutline className='inline mb-0.5' /> Back to Home
@@ -82,121 +83,144 @@ export default function Signup () {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Full Name */}
-          <label className='text-white md:text-lg'>Name</label>
-          <input
-            {...register('full_name', { required: 'Name is required' })}
-            type='text'
-            placeholder='Enter your Name'
-            className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
-            disabled={isLoading}
-          />
-          {errors.full_name && (
-            <span className='text-red-500 text-sm'>
-              {errors.full_name.message}
-            </span>
-          )}
-
-          {/* Mobile Number */}
-          <label className='text-white md:text-lg mt-5 block'>
-            Mobile Number
-          </label>
-          <input
-            {...register('phone', {
-              required: 'Mobile number is required',
-              pattern: {
-                value: /^(?:\+88)?01[3-9]\d{8}$/,
-                message: 'Invalid phone number'
-              }
-            })}
-            type='text'
-            placeholder='Enter your Mobile Number'
-            className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
-            disabled={isLoading}
-          />
-          {errors.phone && (
-            <span className='text-red-500 text-sm'>{errors.phone.message}</span>
-          )}
-
-          {/* Address */}
-          <label className='text-white md:text-lg mt-5 block'>Address</label>
-          <input
-            {...register('address', { required: 'Address is required' })}
-            type='text'
-            placeholder='Enter your Address'
-            className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
-            disabled={isLoading}
-          />
-          {errors.address && (
-            <span className='text-red-500 text-sm'>
-              {errors.address.message}
-            </span>
-          )}
-
-          {/* Email */}
-          <label className='text-white md:text-lg mt-5 block'>
-            Email Address
-          </label>
-          <input
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'Invalid email'
-              }
-            })}
-            type='email'
-            placeholder='Enter your Email Address'
-            className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
-            disabled={isLoading}
-          />
-          {errors.email && (
-            <span className='text-red-500 text-sm'>{errors.email.message}</span>
-          )}
-
-          {/* Password */}
-          <label className='text-white md:text-lg mt-5 block'>Password</label>
-          <div className='relative'>
-            <input
-              {...register('password', {
-                required: 'Password is required',
-                minLength: {
-                  value: 6,
-                  message: 'Password must be at least 6 characters'
-                }
-              })}
-              type={showPassword ? 'text' : 'password'}
-              placeholder='Enter your Password'
-              className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
-              disabled={isLoading}
-            />
-            <button
-              type='button'
-              onClick={() => setShowPassword(!showPassword)}
-              className='absolute right-3 top-5 text-gray-600'
-            >
-              {showPassword ? <FiEye /> : <FiEyeOff />}
-            </button>
+          <div className='flex gap-x-5 justify-between items-center'>
+            <div className='w-full'>
+              <label className='text-white md:text-lg'>Name</label>
+              <input
+                {...register('full_name', { required: 'Name is required' })}
+                type='text'
+                placeholder='Enter your Name'
+                className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
+                disabled={isLoading}
+              />
+              {errors.full_name && (
+                <span className='text-red-500 text-sm'>
+                  {errors.full_name.message}
+                </span>
+              )}
+            </div>
+            <div className='w-full'>
+              {/* Mobile Number */}
+              <label className='text-white md:text-lg block'>
+                Mobile Number
+              </label>
+              <input
+                {...register('phone', {
+                  required: 'Mobile number is required',
+                  pattern: {
+                    value: /^(?:\+88)?01[3-9]\d{8}$/,
+                    message: 'Invalid phone number'
+                  }
+                })}
+                type='text'
+                placeholder='Enter your Mobile Number'
+                className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
+                disabled={isLoading}
+              />
+              {errors.phone && (
+                <span className='text-red-500 text-sm'>
+                  {errors.phone.message}
+                </span>
+              )}
+            </div>
           </div>
-          {errors.password && (
-            <span className='text-red-500 text-sm'>
-              {errors.password.message}
-            </span>
-          )}
 
-          {/* Register As */}
-          <label className='text-white md:text-lg mt-5 block'>
-            Register As
-          </label>
-          <select
-            {...register('registerAs', { required: true })}
-            className='w-full px-3 py-4 bg-white rounded-[12px] mt-2 outline-none'
-            disabled={isLoading}
-          >
-            <option value='household'>Household</option>
-            <option value='buyer'>Buyer</option>
-            <option value='serviceprovider'>Service Provider</option>
-            <option value='driver'>Driver</option>
-          </select>
+          <div className='flex gap-x-5 justify-between items-center'>
+            <div className='w-full'>
+              {/* Address */}
+              <label className='text-white md:text-lg mt-5 block'>
+                Address
+              </label>
+              <input
+                {...register('address', { required: 'Address is required' })}
+                type='text'
+                placeholder='Enter your Address'
+                className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
+                disabled={isLoading}
+              />
+              {errors.address && (
+                <span className='text-red-500 text-sm'>
+                  {errors.address.message}
+                </span>
+              )}
+            </div>
+            <div className='w-full'>
+              {/* Email */}
+              <label className='text-white md:text-lg mt-5 block'>
+                Email Address
+              </label>
+              <input
+                {...register('email', {
+                  required: 'Email is required',
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: 'Invalid email'
+                  }
+                })}
+                type='email'
+                placeholder='Enter your Email Address'
+                className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
+                disabled={isLoading}
+              />
+              {errors.email && (
+                <span className='text-red-500 text-sm'>
+                  {errors.email.message}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className='flex gap-x-5 justify-between items-start'>
+            <div className='w-full'>
+              {/* Password */}
+              <label className='text-white md:text-lg mt-5 block'>
+                Password
+              </label>
+              <div className='relative'>
+                <input
+                  {...register('password', {
+                    required: 'Password is required',
+                    minLength: {
+                      value: 6,
+                      message: 'Password must be at least 6 characters'
+                    }
+                  })}
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder='Enter your Password'
+                  className='placeholder:text-sm w-full px-3 py-4 bg-white outline-none rounded-[12px] mt-2'
+                  disabled={isLoading}
+                />
+                <button
+                  type='button'
+                  onClick={() => setShowPassword(!showPassword)}
+                  className='absolute right-3 top-6 text-gray-600'
+                >
+                  {showPassword ? <FiEye /> : <FiEyeOff />}
+                </button>
+              </div>
+              {errors.password && (
+                <span className='text-red-500 text-sm'>
+                  {errors.password.message}
+                </span>
+              )}
+            </div>
+
+            <div className='w-full'>
+              {/* Register As */}
+              <label className='text-white md:text-lg mt-5 block'>
+                Register As
+              </label>
+              <select
+                {...register('registerAs', { required: true })}
+                className='w-full px-3 py-4 bg-white rounded-[12px] mt-2 outline-none'
+                disabled={isLoading}
+              >
+                <option value='household'>Household</option>
+                <option value='buyer'>Buyer</option>
+                <option value='driver'>Driver</option>
+              </select>
+            </div>
+          </div>
 
           {/* Submit Button */}
           <button
@@ -208,7 +232,7 @@ export default function Signup () {
           </button>
 
           {/* Login Redirect */}
-          <p className='text-center mt-5 text-[#D9D9D9] text-sm'>
+          <p className='text-center mt-5 text-[#D9D9D9] text-sm md:text-base'>
             Already have an account?{' '}
             <Link href='/login' className='text-[#7FC155] font-medium'>
               Login

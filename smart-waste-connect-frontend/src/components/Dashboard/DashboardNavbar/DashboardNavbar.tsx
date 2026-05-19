@@ -1,31 +1,38 @@
 'use client'
-import { User } from "lucide-react";
-import Image from "next/image";
-import { FaRegBell } from "react-icons/fa";
+import { FaRegBell } from 'react-icons/fa'
+import ProfileDropdown from './ProfileDropdown'
 
-export function DashboardNavbar() {
-    const user = {
-        name: 'Ahtesham',
-        image: 'https://avatars.githubusercontent.com/u/12345678?v=4'
-    }
+interface UserProps {
+  full_name: string
+  image?: string
+  role?: string
+}
 
-    return (
-        <div className="bg-sidenav w-full h-[80px] shadow-lg flex items-center justify-between px-5">
-            <h1 className="text-2xl font-extrabold">Welcome Back {'Ahtesham'}</h1>
-            <div className="flex gap-x-5">
-                <div className="bg-[#287883] w-10 h-10 p-2 flex justify-center items-center rounded-full">
-                    <FaRegBell size={22} />
-                </div>
-                {
-                    user?.image ? <div className="w-10 h-10 rounded-full">
-                        <Image src={user?.image} alt="user-image" width={40} height={40} className="rounded-full"/>
-                    </div> :
-                        <div className="bg-[#287883] w-10 h-10 p-2 flex justify-center items-center rounded-full">
-                            <User size={22} />
-                        </div>
-                }
+interface DashboardNavbarProps {
+  user: UserProps | null
+}
 
-            </div>
-        </div>
-    )
+export function DashboardNavbar({ user }: DashboardNavbarProps) {
+  return (
+    <div className='bg-[#2d5a35] w-full h-[70px] shadow-lg flex items-center justify-between px-6 text-white'>
+      {/* Left: Welcome */}
+      <h1 className='text-xl font-bold tracking-tight'>
+        Welcome back,{' '}
+        <span className='text-[#7FC155]'>{user?.full_name || 'User'}</span>
+      </h1>
+
+      {/* Right: Actions */}
+      <div className='flex items-center gap-4'>
+        {/* Notification Bell */}
+        <button className='w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#7FC155] transition-colors duration-200 relative'>
+          <FaRegBell size={18} />
+          {/* Optional badge */}
+          <span className='absolute top-1.5 right-1.5 w-2 h-2 bg-red-400 rounded-full border border-[#2d5a35]' />
+        </button>
+
+        {/* Profile Dropdown */}
+        <ProfileDropdown user={user} />
+      </div>
+    </div>
+  )
 }
