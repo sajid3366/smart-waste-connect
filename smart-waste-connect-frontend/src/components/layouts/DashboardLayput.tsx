@@ -13,13 +13,14 @@ interface UserProps {
   image?: string
 }
 
-export default function DashboardLayout ({
-  children
+export default function DashboardLayout({
+  children,
 }: {
   children: React.ReactNode
 }) {
   const [role, setRole] = useState<UserRole | null>(null)
   const [user, setUser] = useState<UserProps | null>(null)
+
   useEffect(() => {
     const savedRole = Cookies.get('role') as UserRole
     setRole(savedRole || null)
@@ -32,9 +33,6 @@ export default function DashboardLayout ({
   const fetchCurrentUser = async () => {
     try {
       const res = await authService.getCurrentUserProfile()
-
-      // console.log(res.data, 'user data')
-
       setUser(res.data.user)
     } catch (error) {
       console.error('Error fetching current user profile:', error)
@@ -44,13 +42,15 @@ export default function DashboardLayout ({
   if (!role) return null
 
   return (
-    <div className='flex min-h-screen bg-[#f0f4f0] text-gray-800'>
+    <div className='flex h-screen overflow-hidden bg-[#f0f4f0] text-gray-800'>
       <DashboardSidebar role={role} />
 
-      <div className='flex-1 flex flex-col'>
+      <div className='flex flex-1 flex-col overflow-hidden'>
         <DashboardNavbar user={user} />
 
-        <main className='p-2 rounded-lg flex-1 overflow-auto'>{children}</main>
+        <main className='flex-1 overflow-y-auto p-2'>
+          {children}
+        </main>
       </div>
     </div>
   )

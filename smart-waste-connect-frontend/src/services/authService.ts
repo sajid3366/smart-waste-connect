@@ -1,4 +1,4 @@
-import axiosInstance from '@/hooks/useAxios'
+import BASEURL from '@/hooks/useAxios'
 
 interface SignupProps {
     phone: string;
@@ -16,18 +16,18 @@ interface LoginParams {
 
 const authService ={
     signup: async (payload: SignupProps) =>{
-        return await axiosInstance.post(`/auth/signup`, payload)
+        return await BASEURL.post(`/auth/signup`, payload)
     },
     login: async (payload: LoginParams) => {
-        return await axiosInstance.post(`/auth/login`, payload)
+        return await BASEURL.post(`/auth/login`, payload)
     },
 
     logout: async () => {
-        return await axiosInstance.post(`/auth/logout`)
+        return await BASEURL.post(`/auth/logout`)
     },
 
     getCurrentUserProfile: async () => {
-        return await axiosInstance.get(`/auth/profile`)
+        return await BASEURL.get(`/auth/profile`)
     }
 
 }

@@ -6,7 +6,7 @@ import { generateTokens } from '../lib/utils.js'
 // 🧾 Signup Controller
 export const signup = async (req, res) => {
   try {
-    const { full_name, address, email, role, phone, password } = req.body
+    const { full_name, address, email, role, phone, password, profile_pic } = req.body
 
     // ✅ Check duplicate phone
     const existingUser = await User.findOne({ phone })
@@ -21,6 +21,7 @@ export const signup = async (req, res) => {
     const user = new User({
       full_name,
       address,
+      profile_pic,
       email,
       role,
       phone,

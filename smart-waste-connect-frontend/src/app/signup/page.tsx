@@ -37,9 +37,10 @@ export default function Signup () {
       full_name: data.full_name,
       phone: data.phone,
       address: data.address,
+      profile_pic: '',
       email: data.email,
       password: data.password,
-      role: data.registerAs
+      role: data.registerAs,
     }
 
     // console.log(userData, 'user data')
