@@ -33,6 +33,7 @@ export default function ProfileDropdown({ user }: ProfileDropdownProps) {
   const [currentUser, setCurrentUser] = useState<UserProps | null>(user)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
+  console.log(user,   'user')
 
   useEffect(() => { setCurrentUser(user) }, [user])
 

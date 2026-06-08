@@ -31,6 +31,11 @@ const authService ={
     },
     changePassword: async (current_password: string, new_password: string) => {
         return await BASEURL.patch(`/auth/change-password`, { current_password, new_password })
+    },
+    updateProfile: async (data: FormData) => {
+        return await BASEURL.patch(`/auth/update-profile`, data, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+        })
     }
 
 }

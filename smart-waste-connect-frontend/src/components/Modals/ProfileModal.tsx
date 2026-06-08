@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { X, User, Camera, Loader2, Phone, MapPin, Mail, Shield } from 'lucide-react'
 import axiosInstance from '@/hooks/useAxios'
 import toast from 'react-hot-toast'
+import authService from '@/services/authService'
 
 interface UserData {
   _id: string
@@ -65,14 +66,13 @@ export default function ProfileModal({ open, onClose, user, onUpdate }: ProfileM
       formData.append('phone', form.phone)
       if (imageFile) formData.append('profile_pic', imageFile)
 
-      const res = await axiosInstance.patch('/user/update-profile', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
+      const res = await authService.updateProfile(formData)
       toast.success('Profile updated successfully')
       onUpdate(res.data.user)
       onClose()
-    } catch {
-      toast.error('Failed to update profile')
+    } catch (error: any) {
+       toast.error(error?.response?.data?.message ||  error?.response?.data?.error || 'Failed to update profile')
+      // toast.error( 'Failed to update profile')
     } finally {
       setLoading(false)
     }

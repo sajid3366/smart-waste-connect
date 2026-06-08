@@ -40,6 +40,7 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/auth", authRoutes);
 app.use("/auth", userRoutes);
+app.use('/uploads', express.static('uploads'))
 
 // Error logging
 app.use((err, req, res, next) => {
