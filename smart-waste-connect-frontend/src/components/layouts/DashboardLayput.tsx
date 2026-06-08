@@ -7,11 +7,8 @@ import { DashboardNavbar } from '@/components/Dashboard/DashboardNavbar/Dashboar
 import { DashboardSidebar } from '@/components/Dashboard/DashboardSidebar/DashboardSidebar'
 import { UserRole } from '@/config/sidebarMenus'
 import authService from '@/services/authService'
+import type { UserData } from '@/types/user'
 
-interface UserProps {
-  full_name: string
-  image?: string
-}
 
 export default function DashboardLayout({
   children,
@@ -19,7 +16,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   const [role, setRole] = useState<UserRole | null>(null)
-  const [user, setUser] = useState<UserProps | null>(null)
+  const [user, setUser] = useState<UserData | null>(null)
 
   useEffect(() => {
     const savedRole = Cookies.get('role') as UserRole

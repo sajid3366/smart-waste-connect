@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
 import wasteLogo from '../../../../public/images/smart-waste-small-logo.png'
-import { sidebarMenus, UserRole, MenuItem } from '@/config/sidebarMenus'
+import { sidebarMenus, UserRole} from '@/config/sidebarMenus'
 
 export function DashboardSidebar({ role }: { role: UserRole }) {
   const pathname = usePathname()

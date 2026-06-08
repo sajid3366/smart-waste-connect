@@ -1,15 +1,10 @@
 'use client'
 import { FaRegBell } from 'react-icons/fa'
 import ProfileDropdown from './ProfileDropdown'
-
-interface UserProps {
-  full_name: string
-  image?: string
-  role?: string
-}
+import type { UserData } from '@/types/user'
 
 interface DashboardNavbarProps {
-  user: UserProps | null
+  user: UserData | null
 }
 
 export function DashboardNavbar({ user }: DashboardNavbarProps) {

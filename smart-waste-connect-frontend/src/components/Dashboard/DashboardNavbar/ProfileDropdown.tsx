@@ -8,32 +8,22 @@ import authService from '@/services/authService'
 import toast from 'react-hot-toast'
 import ProfileModal from '@/components/Modals/ProfileModal'
 import SettingModal from '@/components/Modals/SettingModal'
+import type { UserData } from '@/types/user'
 
 
-interface UserProps {
-  _id?: string
-  full_name: string
-  address?: string
-  email?: string
-  role?: string
-  phone?: string
-  profile_pic?: string
-  image?: string
-  createdAt?: string
-}
 
 interface ProfileDropdownProps {
-  user: UserProps | null
+  user: UserData | null
 }
 
 export default function ProfileDropdown({ user }: ProfileDropdownProps) {
   const [open, setOpen] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
   const [settingOpen, setSettingOpen] = useState(false)
-  const [currentUser, setCurrentUser] = useState<UserProps | null>(user)
+  const [currentUser, setCurrentUser] = useState<UserData | null>(user)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
-  console.log(user,   'user')
+  // console.log(user,   'user')
 
   useEffect(() => { setCurrentUser(user) }, [user])
 
@@ -139,7 +129,7 @@ export default function ProfileDropdown({ user }: ProfileDropdownProps) {
       <ProfileModal
         open={profileOpen}
         onClose={() => setProfileOpen(false)}
-        user={currentUser as any}
+        user={currentUser}
         onUpdate={(updated) => setCurrentUser(updated)}
       />
       <SettingModal

@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { Truck, MapPin, CheckCircle, Clock, AlertCircle, Navigation, Package, Star } from 'lucide-react'
+import { Truck, MapPin, CheckCircle, Clock, Navigation, Package, Star } from 'lucide-react'
 import axiosInstance from '@/hooks/useAxios'
 
 interface DriverStats {

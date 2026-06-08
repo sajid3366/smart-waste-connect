@@ -26,7 +26,7 @@ export default function AdminDashboard() {
       }
     }
     fetchStats()
-  }, [axiosInstance])
+  }, [])
 
   if (loading) return <DashboardSkeleton />
 

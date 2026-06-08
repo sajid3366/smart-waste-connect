@@ -6,7 +6,6 @@ import {
   Users,
   CreditCard,
   History,
-  Briefcase,
 } from "lucide-react"
 
 export type UserRole = "admin" | "household" | "driver" | "buyer"
