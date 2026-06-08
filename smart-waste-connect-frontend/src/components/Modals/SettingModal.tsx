@@ -5,6 +5,7 @@ import axiosInstance from '@/hooks/useAxios'
 import toast from 'react-hot-toast'
 import { removeToken } from '@/utils/tokenStorage'
 import { useRouter } from 'next/navigation'
+import authService from '@/services/authService'
 
 interface SettingModalProps {
   open: boolean
@@ -84,15 +85,12 @@ function PasswordPanel({ onClose }: { onClose: () => void }) {
     }
     setLoading(true)
     try {
-      await axiosInstance.patch('/user/change-password', {
-        currentPassword: fields.current,
-        newPassword: fields.newPass,
-      })
+      await authService.changePassword(fields.current, fields.newPass)
       toast.success('Password changed successfully')
       setFields({ current: '', newPass: '', confirm: '' })
       onClose()
     } catch (err: any) {
-      toast.error(err?.response?.data?.message || 'Failed to change password')
+      toast.error(err?.response?.data?.message ||  err?.response?.data?.error || 'Failed to change password')
     } finally {
       setLoading(false)
     }

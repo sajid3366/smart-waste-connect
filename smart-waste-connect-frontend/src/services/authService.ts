@@ -28,6 +28,9 @@ const authService ={
 
     getCurrentUserProfile: async () => {
         return await BASEURL.get(`/auth/profile`)
+    },
+    changePassword: async (current_password: string, new_password: string) => {
+        return await BASEURL.patch(`/auth/change-password`, { current_password, new_password })
     }
 
 }
